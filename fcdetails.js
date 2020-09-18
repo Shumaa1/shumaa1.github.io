@@ -34,7 +34,11 @@ function drawFC(data){
   
   $.each(FCM,function(i,v){
   	//for testing
+<<<<<<< Updated upstream
     if(i < 200){
+=======
+    if(i < 14){
+>>>>>>> Stashed changes
       var c = 0;
       var delay = i * 300;
       setTimeout(function(){
