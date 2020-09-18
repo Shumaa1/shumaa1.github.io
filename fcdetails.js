@@ -73,7 +73,7 @@ function drawFC(data){
             	var highestClassExpac = "ARR";
             }
            
-		   if(!$("#"+$.trim(v.Rank))){
+		   if(!$("#"+$.trim(v.Rank)).length){
 			   $("#container").append("<div id='" + $.trim(v.Rank) + "'</div>")
 		   }
 		   
