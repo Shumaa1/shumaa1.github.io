@@ -46,18 +46,19 @@ p#FCcrest {
 }
 
 #optionsBox {
-    position: absolute;
-    right: 10;
+    position: fixed;
+    bottom: 0;
     background: white;
-    top: 10;
-    width: 100px;
-    height: 100px;
+    right: 0;
+    width: 250px;
+    height: 50px;
     text-align: center;
+    z-index: 100;
 }
 
 .toggleBox {
-    width: 46%;
-    height: 46%;
+    width: 20%;
+    height: 90%;
     display: inline-block;
     margin: 1%;
     background: black;
