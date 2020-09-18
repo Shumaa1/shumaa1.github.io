@@ -72,7 +72,7 @@ function drawFC(data){
             	var highestClassExpac = "ARR";
             }
            
-           $("#members").append("<div data-sort='"+ v.ID +"' class='charCard front" + highestClassExpac + "'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='charCard back'>BACK</div>");
+           $("#members").append("<div data-sort='"+ v.ID +"' ><div class='charCard front " + highestClassExpac + "'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='charCard back'>BACK</div></div>");
           },
           error:function(error){
            console.log(error);
