@@ -76,7 +76,7 @@ function drawFC(data){
 			var fRank = v.Rank.replace(/\s/g, '');
            
 		   if(!$("#"+fRank).length){
-			   $("#container").append("<div id='" + fRank + "' class='members'></div>")
+			   $("#container").append("<div id='" + fRank + "' class='members'><div class='rankTitle'>" + v.Rank + "</div></div>");
 		   }
 		   
            $("#" + fRank).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");

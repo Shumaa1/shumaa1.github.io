@@ -59,6 +59,12 @@ p#FCcrest {
     background: #b19336;
 }
 
+.rankTitle {
+    font-size: 5em;
+    color: #ffffff26;
+
+}
+
 .portrait{
   width: 99%;
   height:auto;
@@ -82,10 +88,12 @@ p#FCcrest {
     border: 2px solid #b19336;
 }
 
-.members{
-  max-width:90%;
-  text-align:center;
-  margin:auto;
+.members {
+    max-width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+
 }
 
 .SB,.HW,.SHB{
