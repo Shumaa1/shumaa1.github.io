@@ -82,7 +82,7 @@ p#FCcrest {
     border: 2px solid #b19336;
 }
 
-#members{
+.members{
   max-width:80%;
   text-align:center;
   margin:auto;
