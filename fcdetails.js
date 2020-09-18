@@ -45,12 +45,13 @@ function drawFC(data){
 
         qData = {
           pretty:1,
-          data:""  
+          data:"CJ"  
        }
 
         $.ajax({
           url:"https://xivapi.com/character/" + v.ID,
           aync:false,
+		  data:qData,
           success:function(mdata){
             console.log("Data");
             console.log(mdata);
