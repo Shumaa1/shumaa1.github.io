@@ -99,5 +99,9 @@ function drawFC(data){
 fetchFC("9234631035923204343");
 
 function toggleDisplay(e){
-	$("."+e).toggle();
+	if($("." + e).css("display") == "inline-block"){
+		$("." + e).css("display","none");
+	}else{
+		$("." + e).css("display","inline-block");
+	}
 }

@@ -125,13 +125,5 @@ p#FCcrest {
     padding-left: 10%;
     padding-right: 10%;
     text-align: center;
-
 }
 
-.SB,.HW,.SHB{
-   display:none;
-}
-
-.SHB{
-  display:inline-block;
-}
