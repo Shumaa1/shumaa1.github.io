@@ -49,14 +49,20 @@ p#FCcrest {
     width: 200px;
     height: 301px;
     display: inline-block;
-    margin: 2px;
+    margin: 5px;
     /* border: 2px solid #a98b2a; */
     /* border-radius: 89px; */
     /* background: #ae9031; */
+    box-shadow: 2px 3px 9px black;
 }
 
 .front, .back {
-    background: #b19336;
+    /*background: #b19336;*/
+}
+
+.back{
+	background:url("resources/cardback.jpg");
+	background-size:cover;
 }
 
 .rankTitle {

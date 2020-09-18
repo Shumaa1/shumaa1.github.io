@@ -36,7 +36,7 @@ function drawFC(data){
   $.each(FCM,function(i,v){
   	//for testing
 
-    if(i < 10){
+    if(i < 50){
       var c = 0;
       var delay = i * 300;
       setTimeout(function(){
