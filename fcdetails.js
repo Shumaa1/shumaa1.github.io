@@ -74,10 +74,10 @@ function drawFC(data){
             }
            
 		   if(!$("#"+$.trim(v.Rank))){
-			   $(body).append("<div id='" + $.trim(v.Rank) + "'</div>")
+			   $("#container").append("<div id='" + $.trim(v.Rank) + "'</div>")
 		   }
 		   
-           $("# + $.trim(v.Rank) + ").append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
+           $("#" + $.trim(v.Rank)).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
 		   $("#"+v.ID).flip();
           },
           error:function(error){
