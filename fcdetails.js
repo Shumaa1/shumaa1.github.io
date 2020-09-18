@@ -72,12 +72,14 @@ function drawFC(data){
             }else{
             	var highestClassExpac = "ARR";
             }
+			
+			var fRank = v.Rank.replace(/\s/g, '');
            
-		   if(!$("#"+$.trim(v.Rank)).length){
-			   $("#container").append("<div id='" + $.trim(v.Rank) + "'</div>")
+		   if(!$("#"+fRank).length){
+			   $("#container").append("<div id='" + fRank + "'></div>")
 		   }
 		   
-           $("#" + $.trim(v.Rank)).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
+           $("#" + fRank).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
 		   $("#"+v.ID).flip();
           },
           error:function(error){
