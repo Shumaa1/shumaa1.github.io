@@ -34,7 +34,7 @@ function drawFC(data){
   
   $.each(FCM,function(i,v){
   	//for testing
-    if(i < 200){
+    if(i < 10){
       var c = 0;
       var delay = i * 300;
       setTimeout(function(){
@@ -71,7 +71,7 @@ function drawFC(data){
             	var highestClassExpac = "ARR";
             }
            
-           $("#members").append("<div class='charCard " + highestClassExpac + "'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div>");
+           $("#members").append("<div data-sort='"+ v.ID +"' class='charCard " + highestClassExpac + "'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div>");
           },
           error:function(error){
            console.log(error);
