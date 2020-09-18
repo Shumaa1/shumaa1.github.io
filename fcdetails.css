@@ -1,13 +1,7 @@
-@font-face {
-  font-family: finalFantasy;
-  src: url(resources/FinalFantasy-aa4m.ttf);
-}
-
-
 body{
   padding:0;
   margin:0;
-  font-family:finalFantasy;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 
