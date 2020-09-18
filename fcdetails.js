@@ -63,11 +63,11 @@ function drawFC(data){
               }              
             })
             
-            if(highestClass > 79){
+            if(highestClass > 70){
             	var highestClassExpac = "SHB";
             }else if(highestClass > 60 && highestClass <= 70){
             	var highestClassExpac = "SB";
-         		}else if(highestClass > 50 && highestClass <= 60){
+         	}else if(highestClass > 50 && highestClass <= 60){
             	var highestClassExpac = "HW";
             }else{
             	var highestClassExpac = "ARR";
