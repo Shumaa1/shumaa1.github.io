@@ -10,7 +10,8 @@ function fetchFC(FCID){
 	$.ajax({
   	url:"https://xivapi.com/freecompany/" + FCID,
     data:qData,
-    success:function(data){    	
+    success:function(data){
+		console.log(data)
     	drawFC(data); 
     }
   
@@ -72,7 +73,11 @@ function drawFC(data){
             	var highestClassExpac = "ARR";
             }
            
-           $("#members").append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
+		   if(!$("#"+$.trim(v.Rank))){
+			   $(body).append("<div id='" + $.trim(v.Rank) + "'</div>")
+		   }
+		   
+           $("# + $.trim(v.Rank) + ").append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
 		   $("#"+v.ID).flip();
           },
           error:function(error){
