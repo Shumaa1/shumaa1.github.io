@@ -97,3 +97,7 @@ function drawFC(data){
 }
 
 fetchFC("9234631035923204343");
+
+function toggleDisplay(e){
+	$("."+e).toggle();
+}

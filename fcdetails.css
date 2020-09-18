@@ -45,6 +45,28 @@ p#FCcrest {
     float: left;
 }
 
+#optionsBox {
+    position: absolute;
+    right: 10;
+    background: white;
+    top: 10;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.toggleBox {
+    width: 46%;
+    height: 46%;
+    display: inline-block;
+    margin: 1%;
+    background: black;
+    color: white;
+    border-radius: 3px;
+    line-height: 48px;
+    font-size: 24px;
+}
+
 .charCard {
     width: 200px;
     height: 301px;
