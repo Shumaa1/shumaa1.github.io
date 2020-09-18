@@ -1,0 +1,83 @@
+body{
+  padding:0;
+  margin:0;
+}
+
+
+#container{
+  background:#1b232d; 
+}
+
+#headerCont{
+  height:200px;
+  width:100%;
+  background:#000000b8;
+  
+}
+
+#FCname, #FCslogan {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin: auto;
+    /* display: inline-block; */
+    /* float: left; */
+}
+
+#FCslogan{
+  font-size:16px;  
+}
+
+.Crest{
+  position:absolute;
+  top:0;
+  left:0;  
+}
+p#FCcrest {
+    width: 128px;
+    position: relative;
+    border: 2px solid gold;
+    height: 128px;
+    display: inline-block;
+    float: left;
+}
+
+.charCard {
+    width: 200px;
+    display: inline-block;
+    margin: 2px;
+    border: 2px solid grey;
+}
+
+.portrait{
+  width:100%;
+  height:auto; 
+  margin:0;
+}
+
+.charName {
+    position: relative;
+    /* bottom: 0; */
+    background: #171f85;
+    color: white;
+    height: 20px;
+    font-size: 16px;
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    padding: 2px;
+}
+
+#members{
+  max-width:80%;
+  text-align:center;
+  margin:auto;
+}
+
+.SB,.HW,.SHB{
+   display:none;
+}
+
+.SHB{
+  display:inline-block;
+}
