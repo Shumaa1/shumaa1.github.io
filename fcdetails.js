@@ -38,6 +38,10 @@ function drawFC(data){
   
   $.each(FCM,function(i,v){
 	var goReq = false;
+	
+	if(reqCount <=10){
+		goReq = true;
+	}
 
 	console.log("Pre while check: " + goReq )
     while(goReq == false){
