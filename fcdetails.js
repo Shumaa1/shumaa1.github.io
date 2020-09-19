@@ -37,10 +37,10 @@ function drawFC(data){
   
   
   $.each(FCM,function(i,v){
-	var goReq = true;
+	var goReq = false;
 	
 	if(reqCount >10){
-		goReq = false;
+		goReq = true;
 	}
 
 	console.log("Pre while check: " + goReq )
