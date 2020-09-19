@@ -36,10 +36,10 @@ function drawFC(data){
   $.each(FCM,function(i,v){
   	//for testing
 
-    if(i < 50){
+    if(i < 10){
       var c = 0;
-      var delay = i * 300;
-      setTimeout(function(){
+      var delay = i * 0;
+     // setTimeout(function(){
       
       
 
@@ -50,7 +50,7 @@ function drawFC(data){
 
         $.ajax({
           url:"https://xivapi.com/character/" + v.ID,
-          aync:false,
+          async:false,
 		  data:qData,
           success:function(mdata){
             console.log("Data");
@@ -88,7 +88,7 @@ function drawFC(data){
           }
         })    
 
-      },delay);
+     // },delay);
 
   }
   })
