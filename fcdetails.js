@@ -38,8 +38,8 @@ function drawFC(data){
 
     if(i < 200){
       var c = 0;
-      var delay = i * 0;
-     // setTimeout(function(){
+      var delay = i * 30;
+      setTimeout(function(){
       
       
 
@@ -50,7 +50,7 @@ function drawFC(data){
 
         $.ajax({
           url:"https://xivapi.com/character/" + v.ID,
-          async:false,
+          async:true,
 		  data:qData,
           success:function(mdata){
             console.log("Data");
@@ -88,7 +88,7 @@ function drawFC(data){
           }
         })    
 
-     // },delay);
+      },delay);
 
   }
   })
