@@ -41,7 +41,7 @@ function drawFC(data){
 
 	console.log("Pre while check: " + goReq )
     while(goReq == false){
-		console.log("starting while loop");
+		console.log("starting while loop" + goReq + " "  + reqCount);
 		if(reqCount <= 10){
 			console.log("loop begun, reqCount:" + reqCount);
 			goReq = true;
