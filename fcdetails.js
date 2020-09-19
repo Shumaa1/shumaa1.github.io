@@ -45,11 +45,12 @@ function drawFC(data){
 
 		console.log("Pre while check: " + goReq )
 		while(goReq == false){
-			
+			setTimeout(function(){
 			console.log("checking if we can launch iteration " + i);
 			if(reqCount <=10){
 				goReq = true;
 			}
+			},1000);
 		}
 
 				
