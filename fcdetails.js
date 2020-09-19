@@ -45,6 +45,7 @@ function drawFC(data){
 
 		console.log("Pre while check: " + goReq )
 		while(goReq == false){
+			
 			console.log("checking if we can launch iteration " + i);
 			if(reqCount <=10){
 				goReq = true;
@@ -58,7 +59,7 @@ function drawFC(data){
 		  pretty:1,
 		  data:"CJ"  
 		}
-
+		console.log("doin requests yo");
 		$.ajax({
 		  url:"https://xivapi.com/character/" + v.ID,
 		  async:true,
