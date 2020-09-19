@@ -101,12 +101,12 @@ function drawFC(data){
 		})    
 
 		
-	}
+	
 
   
   })
 
-$("#loadingCover").hide();
+	$("#loadingCover").hide();
 
 }
 
