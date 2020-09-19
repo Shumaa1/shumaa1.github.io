@@ -38,7 +38,7 @@ function drawFC(data){
 
     if(i < 200){
       var c = 0;
-      var delay = i * 30;
+      var delay = i * 150;
       setTimeout(function(){
       
       
