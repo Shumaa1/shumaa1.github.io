@@ -22,7 +22,7 @@ function fetchFC(FCID){
 
 
 function drawFC(data){
-	var FC = data.FreeCompany;
+  var FC = data.FreeCompany;
   var FCM = data.FreeCompanyMembers;
   var FCcrest0 = "<img class='Crest' src='" + FC.Crest[0] + "'></img>";
   var FCcrest1 = "<img class='Crest' src='" + FC.Crest[1] + "'></img>";
@@ -33,64 +33,68 @@ function drawFC(data){
 	$("#FCname").html(FC.Name + "  [" + FC.Tag + "]");
   $("#FCslogan").html(FC.Slogan);
   
+  var reqCount = 0;
+  
+  
   $.each(FCM,function(i,v){
-  	//for testing
+	var goReq = false;
 
-    if(i < 200){
-      var c = 0;
-      var delay = i * 150;
-      setTimeout(function(){
-      
-      
+	console.log("Pre while check: " + goReq )
+    while(goReq == false){
+		console.log("starting while loop");
+		if(reqCount <= 10){
+			console.log("loop begun, reqCount:" + reqCount);
+			goReq = true;
 
-        qData = {
-          pretty:1,
-          data:"CJ"  
-       }
-
-        $.ajax({
-          url:"https://xivapi.com/character/" + v.ID,
-          async:true,
-		  data:qData,
-          success:function(mdata){
-            console.log("Data");
-            console.log(mdata);
-            
-            var highestClass = 0;
-            $.each(mdata.Character.ClassJobs, function(ind,val){
-              //console.log(highestClass);
-              if(val.Level > highestClass){                	
-                highestClass = val.Level;
-              }              
-            })
-            
-            if(highestClass > 70){
-            	var highestClassExpac = "SHB";
-            }else if(highestClass > 60 && highestClass <= 70){
-            	var highestClassExpac = "SB";
-         	}else if(highestClass > 50 && highestClass <= 60){
-            	var highestClassExpac = "HW";
-            }else{
-            	var highestClassExpac = "ARR";
-            }
-			
-			var fRank = v.Rank.replace(/\s/g, '');
-           
-		   if(!$("#"+fRank).length){
-			   $("#container").append("<div id='" + fRank + "' class='members'><div class='rankTitle'>" + v.Rank + "</div></div>");
+			qData = {
+			  pretty:1,
+			  data:"CJ"  
 		   }
-		   
-           $("#" + fRank).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
-		   $("#"+v.ID).flip();
-          },
-          error:function(error){
-           console.log(error);
-          }
-        })    
 
-      },delay);
+			$.ajax({
+			  url:"https://xivapi.com/character/" + v.ID,
+			  async:true,
+			  data:qData,
+			  success:function(mdata){
+				console.log("Data");
+				console.log(mdata);
+				
+				var highestClass = 0;
+				$.each(mdata.Character.ClassJobs, function(ind,val){
+				  //console.log(highestClass);
+				  if(val.Level > highestClass){                	
+					highestClass = val.Level;
+				  }              
+				})
+				
+				if(highestClass > 70){
+					var highestClassExpac = "SHB";
+				}else if(highestClass > 60 && highestClass <= 70){
+					var highestClassExpac = "SB";
+				}else if(highestClass > 50 && highestClass <= 60){
+					var highestClassExpac = "HW";
+				}else{
+					var highestClassExpac = "ARR";
+				}
+				
+				var fRank = v.Rank.replace(/\s/g, '');
+			   
+			   if(!$("#"+fRank).length){
+				   $("#container").append("<div id='" + fRank + "' class='members'><div class='rankTitle'>" + v.Rank + "</div></div>");
+			   }
+			   
+			   $("#" + fRank).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
+			   $("#"+v.ID).flip();
+			  },
+			  error:function(error){
+			   console.log(error);
+			  }
+			})    
 
-  }
+		}
+	}
+
+  
   })
 
 $("#loadingCover").hide();
