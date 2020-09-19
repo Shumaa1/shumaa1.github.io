@@ -50,7 +50,7 @@ function drawFC(data){
 
         $.ajax({
           url:"https://xivapi.com/character/" + v.ID,
-          aync:false,
+          async:false,
 		  data:qData,
           success:function(mdata){
             console.log("Data");
