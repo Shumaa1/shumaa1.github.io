@@ -33,82 +33,67 @@ function drawFC(data){
 	$("#FCname").html(FC.Name + "  [" + FC.Tag + "]");
   $("#FCslogan").html(FC.Slogan);
   
-  var reqCount = 0;
-  
-  
-	$.each(FCM,function(i,v){
-		var goReq = false;
+  $.each(FCM,function(i,v){
+  	//for testing
 
-		if(reqCount <=10){
-			goReq = true;
-		}
+    if(i < 200){
+      var c = 0;
+      var delay = i * 300;
+      setTimeout(function(){
+      
+      
 
-		console.log("Pre while check: " + goReq )
-		while(goReq == false){
-			setTimeout(function(){
-			console.log("checking if we can launch iteration " + i);
-			if(reqCount <=10){
-				goReq = true;
-			}
-			},1000);
-		}
+        qData = {
+          pretty:1,
+          data:"CJ"  
+       }
 
-				
-		reqCount++;
-
-		qData = {
-		  pretty:1,
-		  data:"CJ"  
-		}
-		console.log("doin requests yo");
-		$.ajax({
-		  url:"https://xivapi.com/character/" + v.ID,
-		  async:true,
+        $.ajax({
+          url:"https://xivapi.com/character/" + v.ID,
+          async:true,
 		  data:qData,
-		  success:function(mdata){
-			reqCount--;
-			console.log("Data");
-			console.log(mdata);
-			
-			var highestClass = 0;
-			$.each(mdata.Character.ClassJobs, function(ind,val){
-			  //console.log(highestClass);
-			  if(val.Level > highestClass){                	
-				highestClass = val.Level;
-			  }              
-			})
-			
-			if(highestClass > 70){
-				var highestClassExpac = "SHB";
-			}else if(highestClass > 60 && highestClass <= 70){
-				var highestClassExpac = "SB";
-			}else if(highestClass > 50 && highestClass <= 60){
-				var highestClassExpac = "HW";
-			}else{
-				var highestClassExpac = "ARR";
-			}
+          success:function(mdata){
+            console.log("Data");
+            console.log(mdata);
+            
+            var highestClass = 0;
+            $.each(mdata.Character.ClassJobs, function(ind,val){
+              //console.log(highestClass);
+              if(val.Level > highestClass){                	
+                highestClass = val.Level;
+              }              
+            })
+            
+            if(highestClass > 70){
+            	var highestClassExpac = "SHB";
+            }else if(highestClass > 60 && highestClass <= 70){
+            	var highestClassExpac = "SB";
+         	}else if(highestClass > 50 && highestClass <= 60){
+            	var highestClassExpac = "HW";
+            }else{
+            	var highestClassExpac = "ARR";
+            }
 			
 			var fRank = v.Rank.replace(/\s/g, '');
-		   
+           
 		   if(!$("#"+fRank).length){
 			   $("#container").append("<div id='" + fRank + "' class='members'><div class='rankTitle'>" + v.Rank + "</div></div>");
 		   }
 		   
-		   $("#" + fRank).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
+           $("#" + fRank).append("<div class='charCard " + highestClassExpac + "'  id='"+ v.ID +"' data-sort='"+ v.ID +"' ><div class='front'><img class='portrait' src='" + mdata.Character.Portrait + "'></img><p class='charName'>" + mdata.Character.Name + "</p></div><div class='back'>BACK</div></div>");
 		   $("#"+v.ID).flip();
-		  },
-		  error:function(error){
-		   console.log(error);
-		  }
-		})    
+          },
+          error:function(error){
+           console.log(error);
+          }
+        })    
 
-		
-	
+      },delay);
 
-  
+  }
   })
 
-	$("#loadingCover").hide();
+$("#loadingCover").hide();
 
 }
 
