@@ -39,7 +39,7 @@ function drawFC(data){
     if(i < 50){
       var c = 0;
       var delay = i * 0;
-      setTimeout(function(){
+     // setTimeout(function(){
       
       
 
@@ -88,7 +88,7 @@ function drawFC(data){
           }
         })    
 
-      },delay);
+     // },delay);
 
   }
   })
