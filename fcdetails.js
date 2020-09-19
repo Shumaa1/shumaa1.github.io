@@ -45,6 +45,7 @@ function drawFC(data){
 		if(reqCount <= 10){
 			console.log("loop begun, reqCount:" + reqCount);
 			goReq = true;
+			reqCount++;
 
 			qData = {
 			  pretty:1,
@@ -56,6 +57,7 @@ function drawFC(data){
 			  async:true,
 			  data:qData,
 			  success:function(mdata){
+				reqCount--;
 				console.log("Data");
 				console.log(mdata);
 				
